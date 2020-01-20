@@ -5,12 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Recipe</title>
+
+  
+    <!-- Material Design CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    
+    <!-- Google Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Abel|Amatic+SC|Quicksand&display=swap" rel="stylesheet">
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- Local -->
+    <link rel="stylesheet" type="text/css" href="assets/style/style.css">
+
 </head>
 <body>
-    <h1 id="recipe-name">Recipe Name: Homemade Mac n Cheese</h1>
-    <img src="./assets/images/macncheese_placeholder.jpg">
-    <div>Ingredients</div>
-    <div>Instructions</div>
-    <a rel="https://www.youtube.com">Youtube Tutorial(embeded)</a>
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" onclick="window.location.href ='welcome.html';">home</button>
+                <span class="mdc-top-app-bar__title">Find Your Craving</span>
+            </section>
+
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <!-- Deactivated: Link to Saved Craves-->
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Go to Bookmarks">bookmark</button>
+            </section>
+        </div>
+    </header>
+
+    <main class="mdc-elevation--z6 mdc-layout-grid mdc-top-app-bar--fixed-adjust">
+
+        <h2 id="recipe-name">Homemade Mac n Cheese</h2>
+
+        <div class="mdc-layout-grid__inner">
+
+            <div class="mdc-layout-grid__cell--span-3">
+                <img class="recipe-image" src="./assets/images/macncheese_placeholder.jpg">
+            </div>
+
+            <div class="mdc-layout-grid__cell--span-3 recipe-text">
+                <h3>Ingredients</h3>
+            </div>
+
+            <div class="mdc-layout-grid__cell--span-6 recipe-text">
+                <h3>Instructions</h3>
+            </div>
+
+            <div class="mdc-layout-grid__cell--span-4">
+                <h3>Tutorial Video</h3>
+                <a rel="https://www.youtube.com"></a>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="mdc-elevation--z6">crave it!</footer>
 </body>
 </html>

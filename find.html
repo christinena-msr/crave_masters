@@ -4,16 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Choose</title>
+    <title>Choose Your Craving</title>
+
+  
+    <!-- Material Design CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    
+    <!-- Google Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Abel|Amatic+SC|Quicksand&display=swap" rel="stylesheet">
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- Local -->
+    <link rel="stylesheet" type="text/css" href="assets/style/style.css">
+
 </head>
 <body>
-    <h1>Find a recipe</h1>
-    <h2>Find Your Craving</h2>
-    <button class="category">Italian</button>
-    <button class="category">Asian</button>
-    <button class="category">Mexican</button>
-    <button class="category">American</button>
-    <button class="redirect">Nevermind ...</button>
-    <footer>crave it!</footer>
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+        <div class="mdc-top-app-bar__row">
+
+          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" onclick="window.location.href ='welcome.html';">home</button>
+            <span class="mdc-top-app-bar__title">Find Your Craving</span>
+          </section>
+
+          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+            <!-- Deactivated: Link to Saved Craves-->
+            <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Go to Bookmarks">bookmark</button>
+          </section>
+        </div>
+      </header>
+
+      <main class="mdc-elevation--z6 mdc-layout-grid mdc-top-app-bar--fixed-adjust">
+
+        <h2 class="mdc-elevation--z6">Find A Recipe</h2>
+
+        <ul class="mdc-layout-grid__inner mdc-image-list--with-text-protection my-image-list">
+
+            <li class="mdc-image-list__item mdc-layout-grid__cell">
+                <div class="mdc-image-list__image-aspect-container" onclick="window.location.href ='recipe.html'">
+                <img class="mdc-image-list__image" src="assets/images/italian.jpg">
+                </div>
+                <div class="mdc-image-list__supporting">
+                <span class="mdc-image-list__label">Italian</span>
+                </div>
+            </li>
+
+            <li class="mdc-image-list__item mdc-layout-grid__cell">
+                <div class="mdc-image-list__image-aspect-container" onclick="window.location.href ='recipe.html'">
+                    <img class="mdc-image-list__image" src="assets/images/asian.jpg">
+                </div>
+                <div class="mdc-image-list__supporting">
+                    <span class="mdc-image-list__label">Asian</span>
+                </div>
+            </li>
+
+            <li class="mdc-image-list__item mdc-layout-grid__cell">
+                <div class="mdc-image-list__image-aspect-container" onclick="window.location.href ='recipe.html'">
+                    <img class="mdc-image-list__image" src="assets/images/mexican.jpg">
+                </div>
+                <div class="mdc-image-list__supporting">
+                    <span class="mdc-image-list__label">Mexican</span>
+                </div>
+            </li>
+
+            <li class="mdc-image-list__item mdc-layout-grid__cell">
+                <div class="mdc-image-list__image-aspect-container" onclick="window.location.href ='recipe.html'">
+                    <img class="mdc-image-list__image" src="assets/images/american.jpg">
+                </div>
+                <div class="mdc-image-list__supporting">
+                    <span class="mdc-image-list__label">American</span>
+                </div>
+            </li>
+        </ul>
+    </main>
+    <footer class="mdc-elevation--z6">crave it!</footer>
 </body>
 </html>
