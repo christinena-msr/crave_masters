@@ -32,8 +32,18 @@ footer {
     padding: 5px;
 }
 
-.mdc-image-list__label {
+.recipe-image {
+    max-width: 100%;
+}
+
+.mdc-image-list__label, h3 {
     font-family: 'Quicksand', sans-serif;
+    padding: 0px 15px;
+}
+
+.recipe-text {
+    background-color: #ffffff;
+    color: #2c3e50;
 }
 
 :root {
