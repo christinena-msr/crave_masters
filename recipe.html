@@ -25,33 +25,43 @@
 <body>
     <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
         <div class="mdc-top-app-bar__row">
-          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" onclick="window.location.href ='welcome.html';">home</button>
-            <span class="mdc-top-app-bar__title">Find Your Craving</span>
-          </section>
-          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-            <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Bookmark this page">bookmark</button>
-          </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" onclick="window.location.href ='welcome.html';">home</button>
+                <span class="mdc-top-app-bar__title">Find Your Craving</span>
+            </section>
+
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <!-- Deactivated: Link to Saved Craves-->
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Go to Bookmarks">bookmark</button>
+            </section>
         </div>
-      </header>
+    </header>
+
     <main class="mdc-elevation--z6 mdc-layout-grid mdc-top-app-bar--fixed-adjust">
+
         <h2 id="recipe-name">Homemade Mac n Cheese</h2>
+
         <div class="mdc-layout-grid__inner">
+
             <div class="mdc-layout-grid__cell--span-3">
                 <img class="recipe-image" src="./assets/images/macncheese_placeholder.jpg">
             </div>
+
             <div class="mdc-layout-grid__cell--span-3 recipe-text">
                 <h3>Ingredients</h3>
             </div>
+
             <div class="mdc-layout-grid__cell--span-6 recipe-text">
                 <h3>Instructions</h3>
             </div>
+
             <div class="mdc-layout-grid__cell--span-4">
                 <h3>Tutorial Video</h3>
                 <a rel="https://www.youtube.com"></a>
             </div>
         </div>
     </main>
+    
     <footer class="mdc-elevation--z6">crave it!</footer>
 </body>
 </html>

@@ -25,51 +25,61 @@
 <body>
     <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
         <div class="mdc-top-app-bar__row">
+
           <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
             <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" onclick="window.location.href ='welcome.html';">home</button>
             <span class="mdc-top-app-bar__title">Find Your Craving</span>
           </section>
+
           <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-            <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Bookmark this page">bookmark</button>
+            <!-- Deactivated: Link to Saved Craves-->
+            <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Go to Bookmarks">bookmark</button>
           </section>
         </div>
       </header>
+
       <main class="mdc-elevation--z6 mdc-layout-grid mdc-top-app-bar--fixed-adjust">
+
         <h2 class="mdc-elevation--z6">Find A Recipe</h2>
+
         <ul class="mdc-layout-grid__inner mdc-image-list--with-text-protection my-image-list">
+
             <li class="mdc-image-list__item mdc-layout-grid__cell">
-                <div class="mdc-image-list__image-aspect-container">
+                <div class="mdc-image-list__image-aspect-container" onclick="window.location.href ='recipe.html'">
                 <img class="mdc-image-list__image" src="assets/images/italian.jpg">
                 </div>
                 <div class="mdc-image-list__supporting">
                 <span class="mdc-image-list__label">Italian</span>
                 </div>
             </li>
+
             <li class="mdc-image-list__item mdc-layout-grid__cell">
-                <div class="mdc-image-list__image-aspect-container">
+                <div class="mdc-image-list__image-aspect-container" onclick="window.location.href ='recipe.html'">
                     <img class="mdc-image-list__image" src="assets/images/asian.jpg">
                 </div>
                 <div class="mdc-image-list__supporting">
                     <span class="mdc-image-list__label">Asian</span>
                 </div>
-                </li>
-                <li class="mdc-image-list__item mdc-layout-grid__cell">
-                <div class="mdc-image-list__image-aspect-container">
+            </li>
+
+            <li class="mdc-image-list__item mdc-layout-grid__cell">
+                <div class="mdc-image-list__image-aspect-container" onclick="window.location.href ='recipe.html'">
                     <img class="mdc-image-list__image" src="assets/images/mexican.jpg">
                 </div>
                 <div class="mdc-image-list__supporting">
                     <span class="mdc-image-list__label">Mexican</span>
                 </div>
-                </li>
-                <li class="mdc-image-list__item mdc-layout-grid__cell">
-                <div class="mdc-image-list__image-aspect-container">
+            </li>
+
+            <li class="mdc-image-list__item mdc-layout-grid__cell">
+                <div class="mdc-image-list__image-aspect-container" onclick="window.location.href ='recipe.html'">
                     <img class="mdc-image-list__image" src="assets/images/american.jpg">
                 </div>
                 <div class="mdc-image-list__supporting">
                     <span class="mdc-image-list__label">American</span>
                 </div>
-                </li>
-            </ul>
+            </li>
+        </ul>
     </main>
     <footer class="mdc-elevation--z6">crave it!</footer>
 </body>
