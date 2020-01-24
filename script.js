@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // var myHeaders = new Headers();
 // myHeaders.append("Authorization", "Bearer b-pGPNxMyoDcwwOM5GnbddhGPt5ke00ZQMkhRBJgLb5NCKllnb6ZV-hSeLEwECBvAg7REo7eUJoLfo61lqA_oQ6_qxSXI7ERhzM9wukQ5KDSO_6we4tjfq7dyFMjXnYx");
 
@@ -39,3 +40,19 @@ fetch(`https://api.foursquare.com/v2/venues/search?client_id=${client_id}&client
     .catch(function() {
         // Code for handling errors
     });
+=======
+var myHeaders = new Headers();
+myHeaders.append("Authorization", "Bearer b-pGPNxMyoDcwwOM5GnbddhGPt5ke00ZQMkhRBJgLb5NCKllnb6ZV-hSeLEwECBvAg7REo7eUJoLfo61lqA_oQ6_qxSXI7ERhzM9wukQ5KDSO_6we4tjfq7dyFMjXnYx");
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  mode: 'no-cors',
+  redirect: 'follow'
+};
+
+fetch("https://api.yelp.com/v3/businesses/search?location=seattle", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+>>>>>>> 8edeb551d007e26e83dcb1e97781902faffc9a13
