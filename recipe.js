@@ -32,14 +32,10 @@ function generateRandomRecipe(obj){
 };
 
 function populateYouTube(obj){
-    console.log(obj);
     let videoID = obj.meals[0].strYoutube.split("=")[1];
     let videoURL = `https://www.youtube.com/embed/${videoID}`;
-    console.log(videoURL);
     videoEL.setAttribute("src", videoURL);
-
 }
-
 
 function populatePage(obj){
     recipeNameEl.textContent = `Recipe Name: ${obj.meals[0].strMeal}`;
