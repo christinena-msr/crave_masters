@@ -14,6 +14,10 @@ h2 {
     font-family: 'Amatic SC', cursive;
 }
 
+.restaurant-name {
+    margin: 0px;
+}
+
 content, .button-box  {
     padding: 15px;
     text-align: center;
@@ -34,7 +38,7 @@ footer {
 
 .mdc-image-list__label, h3 {
     font-family: 'Quicksand', sans-serif;
-    padding: 0px 15px;
+    pad0ding: 0px 15px;
 }
 
 .recipe-text {
