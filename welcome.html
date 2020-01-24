@@ -5,14 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Find Your Craving</title>
+
+  
+    <!-- Material Design CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    
+    <!-- Google Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Abel|Amatic+SC|Quicksand&display=swap" rel="stylesheet">
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- Local -->
+    <link rel="stylesheet" type="text/css" href="assets/style/style.css">
+
 </head>
 <body>
-    <h1>Welcome!</h1>
-    <h2>Find Your Craving</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat distinctio corrupti odit officiis, facere, molestias nobis deleniti officia in labore magnam quae sapiente ex minima non, perferendis placeat nostrum!</p>
-    <a class="button-choice" href="./find.html">Let's Cook</a>
-    <a class="button-choice" href="./find.html">Cook For Me</a>
-    <footer>crave it!</footer>
+    <main class="mdc-elevation--z6 mdc-layout-grid">
 
+        <h1 class="mdc-elevation--z1">Find Your Craving</h1>
+
+        <div class="mdc-layout-grid__inner">
+            <content class="mdc-layout-grid__cell--span-12 text-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quaerat distinctio corrupti odit officiis, facere, molestias nobis deleniti officia in labore magnam quae sapiente ex minima non, perferendis placeat nostrum!
+            </content>
+        </div>
+
+        <div class="mdc-layout-grid__inner button-box">
+            <button id="recipe-button" 
+                class="mdc-button mdc-button--raised button-choice mdc-layout-grid__cell--span-2-phone mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-6-desktop" 
+                onclick="window.location.href ='find.html';" 
+                style="background:  #e67e22">
+                    <span class="mdc-button__ripple"></span>
+                    Let's Cook
+            </button>
+            <button id="restaurant-button" 
+                class="mdc-button mdc-button--raised button-choice mdc-layout-grid__cell--span-2-phone mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-6-desktop" 
+                onclick="window.location.href ='find.html';" 
+                style="background: #e74c3c"> 
+                    <span class="mdc-button__ripple"></span> 
+                    Cook For Me
+            </button>
+        </div>
+
+    </main>
+
+    <footer class="mdc-elevation--z6">crave it!</footer>
+
+    <script src="restaurant.js"></script>
 </body>
 </html>
