@@ -2,6 +2,7 @@ const recipeNameEl = document.querySelector('#recipe-name');
 const recipeImgEl = document.querySelector('#recipe-img');
 const ingredientsDivEl = document.querySelector('#ingredients-div');
 const instructionsDivEl = document.querySelector('#instructions-div');
+const videoEL = document.querySelector('#video-iframe');
 
 const redirectedCategory = JSON.parse(window.localStorage.getItem('category'));
 console.log(redirectedCategory);
@@ -30,12 +31,23 @@ function generateRandomRecipe(obj){
     return mealsId;
 };
 
+function populateYouTube(obj){
+    console.log(obj);
+    let videoID = obj.meals[0].strYoutube.split("=")[1];
+    let videoURL = `https://www.youtube.com/embed/${videoID}`;
+    console.log(videoURL);
+    videoEL.setAttribute("src", videoURL);
+
+}
+
+
 function populatePage(obj){
     recipeNameEl.textContent = `Recipe Name: ${obj.meals[0].strMeal}`;
     recipeImgEl.setAttribute('src', obj.meals[0].strMealThumb);
     let arr = createIngredientsArray(obj);
     generateListOfIngredients(arr);
     getInstructions(obj);
+    populateYouTube(obj);
 }
 
 function createIngredientsArray(obj){
