@@ -44,29 +44,32 @@ function createIngredientsArray(obj){
     while (counter < 50) {
         let ingredient = 'strIngredient';
         let nextIngredient = ingredient + counter
+        let measure = 'strMeasure'
+        let nextMeasure = measure + counter;
         // console.log(nextIngredient);
-        ingredientCheck = obj.meals[0][nextIngredient];
+        let finalMeasure = obj.meals[0][nextMeasure];
+        let ingredientCheck = obj.meals[0][nextIngredient];
         // console.log(ingredientCheck)
         if (ingredientCheck === '' || ingredientCheck === null) {
             return ingredientsArr;
         }
         else {
-            ingredientsArr.push(ingredientCheck);
+            ingredientsArr.push(`${ingredientCheck}: ${finalMeasure}`);
         }
         counter++;
     }
 }
 
 function generateListOfIngredients(arr) {
-    let ingredientsString = '';
+    const newList = document.createElement('ul');
     console.log(arr);
     for (let i = 0; i < arr.length; i++) {
+        let newListItem = document.createElement('li');
         let newIngredient = arr[i];
-        ingredientsString += `${newIngredient},  `;
+        newListItem.textContent = newIngredient;
+        newList.append(newListItem);
     }
-    const newDiv = document.createElement('div');
-    newDiv.textContent = `Ingredients: ${ingredientsString}`;
-    ingredientsDivEl.append(newDiv);
+    ingredientsDivEl.append(newList);
 }
 
 function getInstructions(obj) {
