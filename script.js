@@ -26,6 +26,11 @@ fetch(`https://api.foursquare.com/v2/venues/search?client_id=${client_id}&client
         // Code for handling API response
         // console.log(response);
         console.log(response.json());
+        var results = document.createElement("div");
+        results.textContent = response.venues[0].name;
+        var box = document.getElementsByClassName("button-box");
+        
+        box.appendChild(results);
         return response.json();
         
     })
