@@ -17,10 +17,34 @@ fetch(`https://api.foursquare.com/v2/venues/search?client_id=${client_id}&client
     })
     .then(function(json) {
         console.log(json);
-        var results = document.createElement("div");
-        results.textContent = response.venues[1].name;
-        var box = document.getElementsByClassName("button-box");
-        box.appendChild(results);
+        // object is called "json"
+        // response is an object inside the return json object
+        console.log(json.response.venues[1].name);
+        for (let i=0; i<10; i++) {
+            var box = document.getElementById("results-box");
+            // icon code
+            var icon = document.createElement("div");
+            icon.setAttribute("class", "mdc-layout-grid__cell--align-middle mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet");
+            icon.textContent = "icon";
+            box.appendChild(icon);
+            // restaurant name & address
+            var results = document.createElement("div");
+            results.setAttribute("class", "mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet");
+            var restName = document.createElement("h2");
+            restName.setAttribute("class", "restaurant-name");
+            restName.textContent = json.response.venues[i].name;
+            var address = document.createElement("p");
+            address.textContent = json.response.venues[i].location.formattedAddress;
+            results.appendChild(restName);
+            results.appendChild(address);
+            box.appendChild(results);
+            // delivery button code
+            var delivery = document.createElement("button");
+            delivery.setAttribute("class", "mdc-layout-grid__cell--span-2-desktop mdc-button mdc-button--raised mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet");
+            delivery.setAttribute("style", "background: #e74c3c");
+            delivery.textContent = "order delivery";
+            box.appendChild(delivery);
+        }
     })
     .catch(function() {
         // Code for handling errors
