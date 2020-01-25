@@ -42,7 +42,7 @@ function populateYouTube(obj){
 }
 
 function populatePage(obj){
-    recipeNameEl.textContent = `Recipe Name: ${obj.meals[0].strMeal}`;
+    recipeNameEl.textContent = `${obj.meals[0].strMeal}`; //recipe name
     recipeImgEl.setAttribute('src', obj.meals[0].strMealThumb);
     let arr = createIngredientsArray(obj);
     generateListOfIngredients(arr);

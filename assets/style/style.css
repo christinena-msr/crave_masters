@@ -74,6 +74,19 @@ footer {
     padding: 20px;
 }
 
+#recipe-name {
+    background-color: #e67e22;
+    margin: 20px;
+    font-size: 56px;
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+}
+
+#tutorial-video {
+    background-color: #34495e;
+    padding: 20px;
+}
+
 /*-- Tooltip Sytle --*/
 
 .tooltip {
