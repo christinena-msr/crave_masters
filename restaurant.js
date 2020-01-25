@@ -2,7 +2,6 @@
 var client_id = "Z4OJRQC5DTCQDWM2PRZMWSRAMHIUSOGPMQHA2TUZE2Q4G5CF";
 var client_secret = "0OS1RK2RK4HY1AFEAVJUKEQC35WCYALLBRZELKM2LDJMINHX";
 var query = "";
-<<<<<<< HEAD
 var lat = "";
 var lon = "";
 
