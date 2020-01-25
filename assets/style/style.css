@@ -46,6 +46,17 @@ footer {
     color: #2c3e50;
 }
 
+.icon-box {
+    background-color: #c0392b;
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    font-size: 36px;
+    padding: 15px;
+    font-weight: bold;
+    
+}
+
 :root {
     background-image: url("../images/welcome-background.jpg");
     background-size: cover;

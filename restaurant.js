@@ -1,6 +1,9 @@
 
-var client_id = "Z4OJRQC5DTCQDWM2PRZMWSRAMHIUSOGPMQHA2TUZE2Q4G5CF";
-var client_secret = "0OS1RK2RK4HY1AFEAVJUKEQC35WCYALLBRZELKM2LDJMINHX";
+//api keys
+const client_id = "Z4OJRQC5DTCQDWM2PRZMWSRAMHIUSOGPMQHA2TUZE2Q4G5CF";
+const client_secret = "0OS1RK2RK4HY1AFEAVJUKEQC35WCYALLBRZELKM2LDJMINHX";
+
+//api variables
 var query = "";
 var lat = "47.61";
 var lon = "-122.33";
@@ -10,8 +13,6 @@ var category = "4bf58dd8d48988d17a941735";
 fetch(`https://api.foursquare.com/v2/venues/search?client_id=${client_id}&client_secret=${client_secret}&v=20180323&limit=10&ll=${lat},${lon}&categoryId=${category}&radius=40000`)
     .then(function(response) {
         // Code for handling API response
-        // console.log(response);
-        // console.log(response.json());
         return response.json();
         
     })
@@ -25,7 +26,7 @@ fetch(`https://api.foursquare.com/v2/venues/search?client_id=${client_id}&client
 
             // icon code
             var rank = document.createElement("div");
-            rank.setAttribute("class", "mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet");
+            rank.setAttribute("class", "mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet icon-box");
             rank.textContent = i + 1;
             box.appendChild(rank);
 
