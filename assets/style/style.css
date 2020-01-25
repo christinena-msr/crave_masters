@@ -74,9 +74,6 @@ footer {
     padding: 20px;
 }
 
-
-
-
 /*-- Tooltip Sytle --*/
 
 .tooltip {
@@ -85,7 +82,7 @@ footer {
 }
 
 /* Tooltip Text */
-.tooltip .tooltiptext {
+.tooltip .tooltiptext{
     visibility: hidden;
     background-color: #95a5a6;
     color: #2c3e50;
@@ -95,14 +92,33 @@ footer {
     border-radius: 6px;
     font-family: 'Quicksand', sans-serif;
 
-    /* Position*/
+    /* Position-Bottom*/
     position: absolute;
     z-index: 10;
-    top: 100%;
-    left: 50%;
+    top: 50%;
+    left: 100%;
+}
+.tooltip .tooltiptext-left {
+    visibility: hidden;
+    background-color: #95a5a6;
+    color: #2c3e50;
+    text-align: center;
+    font-size: 10px;
+    padding: 5px 2px;
+    border-radius: 6px;
+    font-family: 'Quicksand', sans-serif;
+
+    /* Position-Left*/
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    right: 105%;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+.tooltip:hover .tooltiptext-left {
     visibility: visible;
 }
