@@ -8,6 +8,11 @@ function renderPage() {
     resultsDivEl.innerHTML = '';
 
     for( let i = 0; i < savedRecipesArr.length; i++) {
+        
+    const recipeNameDiv = document.createElement('div');
+    recipeNameDiv.setAttribute("class", "mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet");
+    recipeNameDiv.textContent = savedRecipesArr[i].name;
+    resultsDivEl.append(recipeNameDiv);
 
     const goToBtn = document.createElement('button');
     goToBtn.setAttribute("class", "mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet");
@@ -19,10 +24,6 @@ function renderPage() {
         window.location.href="savedrecipedisplay.html"
     })
 
-    const recipeNameDiv = document.createElement('div');
-    recipeNameDiv.setAttribute("class", "mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet");
-    recipeNameDiv.textContent = savedRecipesArr[i].name;
-    resultsDivEl.append(recipeNameDiv);
 
     const clearBtn = document.createElement('button');
     clearBtn.setAttribute("class", "mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet");
