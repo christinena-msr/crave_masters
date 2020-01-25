@@ -50,8 +50,11 @@ function getRestaurants(category) {
             console.log(json);
             // object is called "json"
             // response is an object inside the return json object
-            console.log(json.response.venues[1].name);
-            for (let i = 0; i < 10; i++) {
+            var restaurantArray = json.response.venues;
+            console.log(restaurantArray);
+            console.log(restaurantArray.length);
+
+            for (let i = 0; i < restaurantArray.length; i++) {
                 var box = document.getElementById("results-box");
                 // icon code
                 var rank = document.createElement("div");
@@ -63,20 +66,28 @@ function getRestaurants(category) {
                 results.setAttribute("class", "mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet");
                 var restName = document.createElement("h2");
                 restName.setAttribute("class", "restaurant-name");
-                restName.textContent = json.response.venues[i].name;
+                restName.textContent = restaurantArray[i].name;
                 var address = document.createElement("p");
-                address.textContent = json.response.venues[i].location.formattedAddress;
+                address.textContent = restaurantArray[i].location.formattedAddress;
                 results.appendChild(restName);
                 results.appendChild(address);
                 box.appendChild(results);
                 // delivery button code
-                var delivery = document.createElement("button");
-                var deliveryURL = json.response.venues[i].delivery.url;
-                delivery.setAttribute("class", "mdc-layout-grid__cell--span-2-desktop mdc-button mdc-button--raised mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet");
-                delivery.setAttribute("style", "background: #e74c3c");
-                delivery.textContent = "order delivery";
-                delivery.setAttribute("onclick", `window.location.href = '${deliveryURL}';`);
-                box.appendChild(delivery);
+                if ("delivery" in restaurantArray[i]) {
+                    var deliveryURL = restaurantArray[i].delivery.url;
+                    var delivery = document.createElement("button");
+                    var deliveryURL = restaurantArray[i].delivery.url;
+                    delivery.setAttribute("class", "mdc-layout-grid__cell--span-2-desktop mdc-button mdc-button--raised mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet");
+                    delivery.setAttribute("style", "background: #e74c3c");
+                    delivery.textContent = "order delivery";
+                    delivery.setAttribute("onclick", `window.location.href = '${deliveryURL}';`);
+                    box.appendChild(delivery);
+                }
+                else {
+                    var delivery =  document.createElement("div");
+                    delivery.setAttribute("class", "mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet");
+                    box.appendChild(delivery);
+                }
             }
         })
         .catch(function () {
