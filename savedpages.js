@@ -23,7 +23,7 @@ function renderPage() {
     for( let i = 0; i < savedRecipesArr.length; i++) {
         
     const recipeNameDiv = document.createElement('h3');
-    recipeNameDiv.setAttribute("class", "mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet");
+    recipeNameDiv.setAttribute("class", "mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet recipe-h2");
     recipeNameDiv.textContent = savedRecipesArr[i].name;
     resultsDivEl.append(recipeNameDiv);
 

@@ -58,7 +58,7 @@ function getRestaurants(category) {
                 var box = document.getElementById("results-box");
                 // icon code
                 var rank = document.createElement("div");
-                rank.setAttribute("class", "mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet");
+                rank.setAttribute("class", "mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet icon-box");
                 rank.textContent = i + 1;
                 box.appendChild(rank);
                 // restaurant name & address
@@ -78,7 +78,7 @@ function getRestaurants(category) {
                     var delivery = document.createElement("button");
                     var deliveryURL = restaurantArray[i].delivery.url;
                     delivery.setAttribute("class", "mdc-layout-grid__cell--span-2-desktop mdc-button mdc-button--raised mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet");
-                    delivery.setAttribute("style", "background: #e74c3c");
+                    delivery.setAttribute("style", "background: #c0392b");
                     delivery.textContent = "order delivery";
                     delivery.setAttribute("onclick", `window.location.href = '${deliveryURL}';`);
                     box.appendChild(delivery);

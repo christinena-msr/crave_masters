@@ -19,7 +19,7 @@ h1, .mdc-top-app-bar__title, .mdc-top-app-bar {
 }
 
 h2 {
-    background-color: #e67e22;
+    background-color: #e74c3c;
     text-align: center;
     font-family: 'Amatic SC', cursive;
 }
@@ -27,6 +27,14 @@ h2 {
 content, .button-box  {
     padding: 15px;
     text-align: center;
+}
+
+.my-image-list {
+    padding: 0px;
+}
+
+.mdc-image-list__image:hover {
+    cursor: pointer;
 }
 
 footer {
@@ -61,14 +69,13 @@ footer {
 }
 
 .icon-box {
-    background-color: #c0392b;
+    background-color: #34495e;
     color: #ffffff;
     font-family: 'Quicksand', sans-serif;
     text-align: center;
     font-size: 36px;
     padding: 15px;
     font-weight: bold;
-    
 }
 
 /*-- Recipe Pages --*/
