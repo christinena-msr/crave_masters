@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Choose Your Craving</title>
-
   
     <!-- Material Design CDN -->
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
@@ -14,9 +13,6 @@
     <!-- Google Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://fonts.googleapis.com/css?family=Abel|Amatic+SC|Quicksand&display=swap" rel="stylesheet">
-
-    <!-- Jquery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <!-- Local -->
     <link rel="stylesheet" type="text/css" href="assets/style/style.css">
@@ -28,7 +24,10 @@
         <div class="mdc-top-app-bar__row">
 
           <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" onclick="window.location.href ='welcome.html';">home</button>
+            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button tooltip" onclick="window.location.href ='welcome.html';">
+                home
+                <span class="tooltiptext">Return to Welcome Page</span>
+            </button>
             <span class="mdc-top-app-bar__title">Find Your Craving</span>
           </section>
 
