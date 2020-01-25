@@ -3,6 +3,7 @@ const recipeImgEl = document.querySelector('#recipe-img');
 const ingredientsDivEl = document.querySelector('#ingredients-div');
 const instructionsDivEl = document.querySelector('#instructions-div');
 const videoEL = document.querySelector('#video-iframe');
+const savedButtonEl = document.querySelector('#saved-pages');
 
 const redirectedCategory = JSON.parse(window.localStorage.getItem('category'));
 console.log(redirectedCategory);
@@ -22,8 +23,13 @@ fetch((categoryUrl + redirectedCategory))
                     .then(function(json){
                         console.log(json);
                         populatePage(json);
+
+                        savedButtonEl.addEventListener('click', saveRecipeData)
                     })
-        })
+        });
+
+
+window.setTimeout(function(){},2000);
 
 function generateRandomRecipe(obj){
     let randomMeal = Math.floor(Math.random() * obj.meals.length);
@@ -70,9 +76,11 @@ function createIngredientsArray(obj){
 
 function generateListOfIngredients(arr) {
     const newList = document.createElement('ul');
+    newList.setAttribute('id', 'new-list');
     console.log(arr);
     for (let i = 0; i < arr.length; i++) {
         let newListItem = document.createElement('li');
+        newListItem.setAttribute('id', `list-item-${i}`);
         let newIngredient = arr[i];
         newListItem.textContent = newIngredient;
         newList.append(newListItem);
@@ -83,6 +91,60 @@ function generateListOfIngredients(arr) {
 function getInstructions(obj) {
     const newDiv = document.createElement('div');
     const instructions = obj.meals[0].strInstructions;
-    newDiv.textContent = `Instructions: ${instructions}`;
+    newDiv.textContent = `Instructions: ${instructions}`
+    newDiv.setAttribute('id', 'new-instructions-div');
     instructionsDivEl.append(newDiv);
+}
+
+function saveRecipeData(obj) {
+    let savedRecipesArr = JSON.parse(window.localStorage.getItem('saved-recipes'));
+    if (savedRecipesArr == null){
+        savedRecipesArr = [];
+    }
+    
+    const savedMealName = recipeNameEl.textContent;
+    const savedImgName = recipeImgEl.getAttribute('src');
+    // const ingredientsArr = createIngredientsArray(obj);
+    // let videoID = obj.meals[0].strYoutube.split("=")[1];
+    // let videoURL = `https://www.youtube.com/embed/${videoID}`;
+    let listEl = document.querySelectorAll('li');
+    let ingredientsArr = [];
+    console.log(listEl.length);
+    for (let i = 0; i < listEl.length; i++) {
+        let liEl = document.querySelector(`#list-item-${i}`).textContent;
+        console.log(liEl);
+        ingredientsArr.push(liEl);
+    }
+    const savedInstructions = (document.querySelector('#new-instructions-div').textContent);
+    const savedVideoURL = videoEL.getAttribute('src');
+    
+    const savedRecipeObj = {
+        name: savedMealName,
+        photo: savedImgName,
+        ingredients: ingredientsArr,
+        instructions: savedInstructions,
+        youtube: savedVideoURL
+    };
+
+    const nameCheck = checkIfRecipeSaved(savedRecipesArr, savedRecipeObj);
+    
+    if (nameCheck == false){
+        savedRecipesArr.push(savedRecipeObj);
+    };
+
+    window.localStorage.setItem('saved-recipes', JSON.stringify(savedRecipesArr));
+    console.log(savedRecipesArr);
+}
+
+function checkIfRecipeSaved(arr, obj) {
+    let used = false;
+    let objName = obj.name;
+    
+    for (let i = 0; i < arr.length; i++) {
+        let nameCheck = arr[i].name;
+        if (nameCheck === objName){
+            used = true;
+        }
+    }
+    return used;
 }
