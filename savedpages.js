@@ -15,8 +15,8 @@ function renderPage() {
     resultsDivEl.append(recipeNameDiv);
 
     const goToBtn = document.createElement('button');
-    goToBtn.setAttribute("class", "mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet mdc-button mdc-button--raised button-gotorecipe");
-    goToBtn.setAttribute("style", "background: #d35400");
+    goToBtn.setAttribute("class", "mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet mdc-button mdc-button--raised");
+    goToBtn.style.backgroundColor = "#d35400";
     goToBtn.textContent='Go to recipe';
     resultsDivEl.append(goToBtn);
     goToBtn.addEventListener('click', function(){
@@ -24,11 +24,10 @@ function renderPage() {
         window.location.href="savedrecipedisplay.html"
     })
 
-
     const clearBtn = document.createElement('button');
-    clearBtn.setAttribute("class", "mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet mdc-button mdc-button--raised button-clearrecipe");
-    goToBtn.setAttribute("style", "background: #95a5a6; color: #2c3e50;"    );
-    clearBtn.textContent="Clear recipe"
+    clearBtn.setAttribute("class", "mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet mdc-button mdc-button--raised");
+    clearBtn.style.backgroundColor = "#95a5a6";
+    clearBtn.textContent="Clear recipe";
     clearBtn.setAttribute('data-name', savedRecipesArr[i].name);
     resultsDivEl.append(clearBtn);
     clearBtn.addEventListener('click', function(event){
