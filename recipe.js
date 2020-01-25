@@ -3,7 +3,7 @@ const recipeImgEl = document.querySelector('#recipe-img');
 const ingredientsDivEl = document.querySelector('#ingredients-div');
 const instructionsDivEl = document.querySelector('#instructions-div');
 const videoEL = document.querySelector('#video-iframe');
-const savedButtonEl = document.querySelector('#saved-pages');
+const savedButtonEl = document.querySelector('#save-recipe');
 
 const redirectedCategory = JSON.parse(window.localStorage.getItem('category'));
 console.log(redirectedCategory);
@@ -24,10 +24,9 @@ fetch((categoryUrl + redirectedCategory))
                         console.log(json);
                         populatePage(json);
 
-                        savedButtonEl.addEventListener('click', saveRecipeData)
+                        savedButtonEl.addEventListener('click', saveRecipeData);
                     })
         });
-
 
 
 function generateRandomRecipe(obj){
@@ -134,7 +133,6 @@ function saveRecipeData() {
 
     window.localStorage.setItem('saved-recipes', JSON.stringify(savedRecipesArr));
     console.log(savedRecipesArr);
-    window.location.href="savedpages.html";
 }
 
 function checkIfRecipeSaved(arr, obj) {
