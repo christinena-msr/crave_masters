@@ -2,7 +2,6 @@
 var client_id = "Z4OJRQC5DTCQDWM2PRZMWSRAMHIUSOGPMQHA2TUZE2Q4G5CF";
 var client_secret = "0OS1RK2RK4HY1AFEAVJUKEQC35WCYALLBRZELKM2LDJMINHX";
 var query = "";
-
 var lat = "";
 var lon = "";
 
@@ -11,7 +10,6 @@ getUserLocation();
 function getUserLocation() {
 
     if (navigator.geolocation) {
-        console.log(navigator.geolocation);
         navigator.geolocation.getCurrentPosition(function (position) {
             lat = (position.coords.latitude).toFixed(2);
             lon = (position.coords.longitude).toFixed(2);
@@ -31,7 +29,6 @@ function getUserLocation() {
 function getCategory() {
 
     const category = JSON.parse(window.localStorage.getItem('restaurantCategory'));
-    console.log(category);
 
     if (category === "" || null) {
         //display message that no category was selected

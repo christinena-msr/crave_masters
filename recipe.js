@@ -88,6 +88,7 @@ function generateListOfIngredients(arr) {
 
 function getInstructions(obj) {
     const newDiv = document.createElement('div');
+    newDiv.setAttribute('class', 'content');
     const instructions = obj.meals[0].strInstructions;
     newDiv.textContent = `Instructions: ${instructions}`
     newDiv.setAttribute('id', 'new-instructions-div');

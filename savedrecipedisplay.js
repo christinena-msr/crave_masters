@@ -31,6 +31,7 @@ function populatePage(arr, index) {
     let fullInstructions = arr[index].instructions;
     let instructions = fullInstructions.split(":")[1];
     let newDiv = document.createElement('div')
+    newDiv.setAttribute('class', 'content');
     newDiv.textContent = instructions;
     instructionsDivEl.append(newDiv);
 
