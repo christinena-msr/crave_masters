@@ -76,10 +76,14 @@ footer {
 
 #recipe-name {
     background-color: #e67e22;
-    margin: 20px;
+    margin: 20px 0px;
     font-size: 56px;
     text-align: center;
     font-family: 'Amatic SC', cursive;
+}
+
+.instructions-text {
+    padding: 25px 0px;
 }
 
 #tutorial-video {
