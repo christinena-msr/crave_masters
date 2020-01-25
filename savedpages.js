@@ -1,11 +1,24 @@
 const resultsDivEl = document.querySelector('#results-box');
 let savedRecipesArr = JSON.parse(window.localStorage.getItem('saved-recipes'));
+if (savedRecipesArr == null) {
+    savedRecipesArr = [];
+}
 
 renderPage();
 
 function renderPage() {
     
     resultsDivEl.innerHTML = '';
+
+    if (savedRecipesArr.length == 0) {
+        const tempDiv = document.createElement('div');
+        tempDiv.setAttribute("class", "mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-12-phone mdc-layout-grid__cell--span-12-tablet");
+        
+        const temph1 = document.createElement('h1');
+        temph1.textContent = 'No saved recipes. Search first, save one, and come back again!';
+        tempDiv.append(temph1);
+        resultsDivEl.append(tempDiv);
+    }
 
     for( let i = 0; i < savedRecipesArr.length; i++) {
         
@@ -33,8 +46,14 @@ function renderPage() {
     clearBtn.addEventListener('click', function(event){
         let recipeName = this.getAttribute('data-name');
         let recipeIndex = findIndex(savedRecipesArr, recipeName);
+        if (savedRecipesArr.length > 1) {
         let newSavedArr = savedRecipesArr.splice(recipeIndex, 1);
         window.localStorage.setItem('saved-recipes', JSON.stringify(newSavedArr));
+        } else {
+            savedRecipesArr = [];
+            window.localStorage.removeItem('saved-recipes');
+        }
+        
         renderPage();
     })
 
