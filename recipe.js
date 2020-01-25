@@ -29,7 +29,6 @@ fetch((categoryUrl + redirectedCategory))
         });
 
 
-window.setTimeout(function(){},2000);
 
 function generateRandomRecipe(obj){
     let randomMeal = Math.floor(Math.random() * obj.meals.length);
@@ -96,7 +95,7 @@ function getInstructions(obj) {
     instructionsDivEl.append(newDiv);
 }
 
-function saveRecipeData(obj) {
+function saveRecipeData() {
     let savedRecipesArr = JSON.parse(window.localStorage.getItem('saved-recipes'));
     if (savedRecipesArr == null){
         savedRecipesArr = [];
@@ -134,6 +133,7 @@ function saveRecipeData(obj) {
 
     window.localStorage.setItem('saved-recipes', JSON.stringify(savedRecipesArr));
     console.log(savedRecipesArr);
+    window.location.href="savedpages.html";
 }
 
 function checkIfRecipeSaved(arr, obj) {

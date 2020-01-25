@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Restaurant</title>
+
+  
+    <!-- Material Design CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    
+    <!-- Google Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Abel|Amatic+SC|Quicksand&display=swap" rel="stylesheet">
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- Local -->
+    <link rel="stylesheet" type="text/css" href="assets/style/style.css">
+
+</head>
+<body>
+
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" onclick="window.location.href ='welcome.html';">home</button>
+                <span class="mdc-top-app-bar__title">Find Your Craving</span>
+            </section>
+
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <!-- Deactivated: Link to Saved Craves-->
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Go to Bookmarks">bookmark</button>
+            </section>
+        </div>
+    </header>
+
+    <!-- name, location, delivery button, -->
+    <main class="mdc-elevation--z6 mdc-layout-grid mdc-top-app-bar--fixed-adjust">
+
+        <h2 id="category-name"></h2>
+
+        <div class="mdc-layout-grid__inner" id="results-box">
+            
+        </div>
+    </main>
+    
+    <footer class="mdc-elevation--z6">crave it!</footer>
+    <script src="savedpages.js"></script>
+
+</body>
+</html>
