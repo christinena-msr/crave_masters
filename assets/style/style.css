@@ -62,6 +62,14 @@ footer {
     
 }
 
+.address {
+    /* text-align: center;
+    margin: 0; */
+    color:#ffffff;
+    text-decoration: none;
+}
+
+
 /*-- Recipe Pages --*/
 
 .recipe-image {

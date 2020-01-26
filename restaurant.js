@@ -13,8 +13,6 @@ function getUserLocation() {
         navigator.geolocation.getCurrentPosition(function (position) {
             lat = (position.coords.latitude).toFixed(2);
             lon = (position.coords.longitude).toFixed(2);
-            console.log(lat);
-            console.log(lon);
 
             getCategory();
 
@@ -58,34 +56,44 @@ function getRestaurants(category) {
                 var box = document.getElementById("results-box");
                 // icon code
                 var rank = document.createElement("div");
-                rank.setAttribute("class", "mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet");
+                rank.setAttribute("class", "mdc-layout-grid__cell--span-1-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-1-tablet");
                 rank.textContent = i + 1;
                 box.appendChild(rank);
                 // restaurant name & address
-                var results = document.createElement("div");
-                results.setAttribute("class", "mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-4-tablet");
-                var restName = document.createElement("h2");
-                restName.setAttribute("class", "restaurant-name");
-                restName.textContent = restaurantArray[i].name;
-                var address = document.createElement("p");
-                address.textContent = restaurantArray[i].location.formattedAddress;
-                results.appendChild(restName);
-                results.appendChild(address);
-                box.appendChild(results);
+                var resultsEl = document.createElement("div");
+                resultsEl.setAttribute("class", "address-link mdc-layout-grid__cell--span-9-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-5-tablet");
+                var restNameEl = document.createElement("h2");
+                restNameEl.setAttribute("class", "restaurant-name");
+                restNameEl.textContent = restaurantArray[i].name.split(',')[0];
+                resultsEl.appendChild(restNameEl);                
+                //restaurant address linkable to google maps
+                var addressEl = document.createElement("a");
+                addressEl.setAttribute("class", "address");
+                addressEl.textContent = restaurantArray[i].location.formattedAddress;
+                var nameForURL = restaurantArray[i].name.replace(/ /gi, '+');
+                var address = restaurantArray[i].location.address.replace(/ /gi, '+');              
+                var addressURL = `https://www.google.com/maps/search/${nameForURL},+${address}`;
+                addressEl.setAttribute("href", addressURL);
+                addressEl.target = "_blank";
+                resultsEl.appendChild(addressEl);
+                box.appendChild(resultsEl);
                 // delivery button code
                 if ("delivery" in restaurantArray[i]) {
                     var deliveryURL = restaurantArray[i].delivery.url;
                     var delivery = document.createElement("button");
                     var deliveryURL = restaurantArray[i].delivery.url;
                     delivery.setAttribute("class", "mdc-layout-grid__cell--span-2-desktop mdc-button mdc-button--raised mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet");
-                    delivery.setAttribute("style", "background: #e74c3c");
+                    delivery.style.background = "#e74c3c";
                     delivery.textContent = "order delivery";
                     delivery.setAttribute("onclick", `window.location.href = '${deliveryURL}';`);
                     box.appendChild(delivery);
                 }
                 else {
-                    var delivery =  document.createElement("div");
-                    delivery.setAttribute("class", "mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet");
+                    var delivery = document.createElement("button");
+                    delivery.setAttribute("class", "disabled-btn mdc-layout-grid__cell--span-2-desktop mdc-button mdc-button--unelevated mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-2-tablet");
+                    delivery.style.background = "#95a5a6";
+                    delivery.style.cursor = "default";
+                    delivery.textContent = "no online delivery";
                     box.appendChild(delivery);
                 }
             }
