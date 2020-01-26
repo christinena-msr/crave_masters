@@ -25,12 +25,12 @@ function populatePage(arr, index) {
         let newIngredient = arr[index].ingredients[i];
         newListItem.textContent = newIngredient;
         newList.append(newListItem);
-    }
+    };
     ingredientsDivEl.append(newList);
 
     let fullInstructions = arr[index].instructions;
-    let instructions = fullInstructions.split(":")[1];
-    let newDiv = document.createElement('div')
+    let instructions = fullInstructions;
+    let newDiv = document.createElement('div');
     newDiv.setAttribute('class', 'content');
     newDiv.textContent = instructions;
     instructionsDivEl.append(newDiv);

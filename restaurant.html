@@ -32,6 +32,11 @@
             </section>
 
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <!--Return to Search-->
+                <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button tooltip" onclick="window.location.href ='find-restaurant.html';">
+                    arrow_back
+                    <span class="tooltiptext-left">Return to Search</span>
+                </button>
                 <!--Go to Saved Recipes-->
                 <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button tooltip" aria-label="Go to Saved Recipes" onclick="window.location.href='savedpages.html'" id="saved-recipes">
                     bookmarks
@@ -43,9 +48,8 @@
 
     <!-- name, location, delivery button, -->
     <main class="mdc-elevation--z6 mdc-layout-grid mdc-top-app-bar--fixed-adjust">
-
-        <h2 id="category-name"></h2>
-
+        <div id="restaurant-header" class="mdc-elevation--10"></div>
+        
         <div class="mdc-layout-grid__inner" id="results-box">
             
         </div>

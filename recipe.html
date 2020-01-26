@@ -31,6 +31,16 @@
                 <span class="mdc-top-app-bar__title">Find Your Craving</span>
             </section>
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <!--Return to Search-->
+                <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button tooltip" onclick="window.location.href ='find.html';">
+                    arrow_back
+                    <span class="tooltiptext-left">Return to Search</span>
+                </button>
+                <!--Refresh Page/Next Recipe-->
+                <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button tooltip" onclick="location.reload();">
+                    refresh
+                    <span class="tooltiptext-left">Find a New Recipe</span>
+                </button>
                 <!--Save Recipe-->
                 <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button tooltip" aria-label="Bookmark Recipe" id="save-recipe">
                     bookmark_border
