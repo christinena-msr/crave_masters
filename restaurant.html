@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Restaurant</title>
+
+  
+    <!-- Material Design CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    
+    <!-- Google Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Abel|Alice|Quicksand|Playfair+Display&display=swap" rel="stylesheet">
+
+    <!-- Local -->
+    <link rel="stylesheet" type="text/css" href="assets/style/style.css">
+
+</head>
+<body>
+
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button tooltip" onclick="window.location.href ='welcome.html';">
+                    home
+                    <span class="tooltiptext">Return to Welcome Page</span>
+                </button>
+                <!--Return to Search-->
+                <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button tooltip" onclick="window.location.href ='find-restaurant.html';">
+                    arrow_back
+                    <span class="tooltiptext-left">Return to Search</span>
+                </button>
+                <span class="mdc-top-app-bar__title">Find Your Craving</span>
+            </section>
+
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                
+                <!--Go to Saved Recipes-->
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button tooltip" aria-label="Go to Saved Recipes" onclick="window.location.href='savedpages.html'" id="saved-recipes">
+                    bookmarks
+                    <span class="tooltiptext-left">Go to saved recipes</span>
+                </button>
+            </section>
+        </div>
+    </header>
+
+    <!-- name, location, delivery button, -->
+    <main class="mdc-elevation--z6 mdc-layout-grid mdc-top-app-bar--fixed-adjust">
+        <div id="restaurant-header" class="mdc-elevation--10"></div>
+        
+        <div class="mdc-layout-grid__inner" id="results-box">
+            
+        </div>
+    </main>
+    
+    <footer class="mdc-elevation--z6">crave it!</footer>
+    <script src="restaurant.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+
+body {
+    margin: 0px;
+}
+
+main {
+    background-color: rgba(125, 130, 87, 0.75);
+    margin: 8px;
+}
+
+:root {
+    background-image: url("../images/heather-ford-f1Z9w1efx3w-unsplash.jpg");
+    background-size: cover;
+    font-family: 'Quicksand regular', sans-serif;
+    color: #ffffff;
+}
+
+h1, .mdc-top-app-bar__title, .mdc-top-app-bar {
+    font-family: 'Alice';
+    text-align: center;
+    background-color: #7d8257;
+}
+
+h2 {
+    /* background-color: #e74c3c; */
+    text-align: center;
+    font-family: 'Alice';
+}
+
+content, .button-box  {
+    padding: 15px;
+    text-align: center;
+}
+
+.my-image-list {
+    padding: 0px;
+}
+
+.mdc-image-list__image:hover {
+    cursor: pointer;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    background-color: #7d8257;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+}
+
+.mdc-top-app-bar--fixed-adjust {
+    margin: 0 8px;
+}
+
+
+/*-- Search Page --*/
+
+#restaurant-header{
+    background-color: #d84c2e;
+    margin: 20px 0px;
+    font-size: 2em;
+    text-align: center;
+    font-family: 'Alice';
+}
+
+.mdc-image-list__label, h3 {
+    font-family: 'Quicksand', sans-serif;
+    padding: 0px 15px;
+}
+
+/*-- Restaurant Pages --*/
+
+.restaurant-name {
+    margin: 0px;
+}
+
+.icon-box {
+    background-color: #34495e;
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    font-size: 36px;
+    padding: 15px;
+    font-weight: bold;
+}
+
+.address {
+    /* margin: 0; */
+    color:#ffffff;
+    text-decoration: none;
+}
+
+.restaurant-result {
+    /* background: #d84c2e; */
+    text-align: center;
+    font-size: 1em;
+}
+
+.nav-icon {
+    padding: 0px 0px;
+    height: 16px;
+}
+
+.restaurant-icon {
+    background-color: #f6fdee;
+    color: #7d8257;
+    border-radius: 8px;
+    text-align: center;
+    padding: 25px 25px;
+    margin: 0px;
+    font-size: 25px;
+    font-family: 'Alice';
+}
+
+/*-- Recipe Pages --*/
+
+.recipe-image {
+    max-width: 100%;
+}
+
+.recipe-text {
+    background-color: #ffffff;
+    color: #494d32;
+    padding: 20px;
+}
+
+#recipe-header, #recipe-name {
+    background-color: #dd992d;
+    margin: 20px 0px;
+    font-size: 2em;
+    text-align: center;
+    font-family: 'Playfair Display';
+}
+
+.instructions-text {
+    padding: 25px 0px;
+}
+
+#tutorial-video {
+    background-color: #7d8257;
+    padding: 20px;
+}
+
+/*-- Tooltip Sytle --*/
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip Text */
+.tooltip .tooltiptext{
+    visibility: hidden;
+    background-color: #95a5a6;
+    color: #2c3e50;
+    text-align: center;
+    font-size: 10px;
+    padding: 5px 2px;
+    border-radius: 6px;
+    font-family: 'Quicksand', sans-serif;
+
+    /* Position-Bottom*/
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 100%;
+}
+.tooltip .tooltiptext-left {
+    visibility: hidden;
+    background-color: #95a5a6;
+    color: #2c3e50;
+    text-align: center;
+    font-size: 10px;
+    padding: 5px 2px;
+    border-radius: 6px;
+    font-family: 'Quicksand', sans-serif;
+
+    /* Position-Left*/
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    right: 105%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+.tooltip:hover .tooltiptext-left {
+    visibility: visible;
+}
