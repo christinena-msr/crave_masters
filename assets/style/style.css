@@ -98,6 +98,22 @@ footer {
     font-size: 1em;
 }
 
+.nav-icon {
+    padding: 0px 0px;
+    height: 16px;
+}
+
+.restaurant-icon {
+    background-color: #f6fdee;
+    color: #7d8257;
+    border-radius: 8px;
+    text-align: center;
+    padding: 25px 25px;
+    margin: 0px;
+    font-size: 25px;
+    font-family: 'Alice';
+}
+
 /*-- Recipe Pages --*/
 
 .recipe-image {

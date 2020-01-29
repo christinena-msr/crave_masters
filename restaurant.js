@@ -56,7 +56,7 @@ function getRestaurants(category) {
                 var box = document.getElementById("results-box");
                 // icon code
                 var rank = document.createElement("div");
-                rank.setAttribute("class", "mdc-layout-grid__cell--span-1-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-1-tablet");
+                rank.setAttribute("class", "restaurant-icon mdc-layout-grid__cell--span-1-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-1-tablet");
                 rank.textContent = i + 1;
                 box.appendChild(rank);
                 // restaurant name & address
