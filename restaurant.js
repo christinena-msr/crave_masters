@@ -74,9 +74,20 @@ function getRestaurants(category) {
                 var address = restaurantArray[i].location.address.replace(/ /gi, '+');              
                 var addressURL = `https://www.google.com/maps/search/${nameForURL},+${address}`;
                 addressEl.setAttribute("href", addressURL);
+                //nav icon
+                var navIcon = document.createElement("button");
+                navIcon.setAttribute("class", "material-icons mdc-top-app-bar__action-item mdc-icon-button tooltip");
+                navIcon.setAttribute("onclick", `window.location.href=${addressURL}`);
+                navIcon.style.padding = "0px 0px";
+                navIcon.style.height = "25px";
+                navIcon.innerHTML = "directions";
                 addressEl.target = "_blank";
+                addressEl.prepend(navIcon);
                 resultsEl.appendChild(addressEl);
                 box.appendChild(resultsEl);
+ 
+
+
                 // delivery button code
                 if ("delivery" in restaurantArray[i]) {
                     var deliveryURL = restaurantArray[i].delivery.url;
