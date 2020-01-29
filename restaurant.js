@@ -61,7 +61,7 @@ function getRestaurants(category) {
                 box.appendChild(rank);
                 // restaurant name & address
                 var resultsEl = document.createElement("div");
-                resultsEl.setAttribute("class", "address-link mdc-layout-grid__cell--span-9-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-5-tablet");
+                resultsEl.setAttribute("class", "restaurant-result address-link mdc-layout-grid__cell--span-9-desktop mdc-layout-grid__cell--span-4-phone mdc-layout-grid__cell--span-5-tablet");
                 var restNameEl = document.createElement("h2");
                 restNameEl.setAttribute("class", "restaurant-name");
                 restNameEl.textContent = restaurantArray[i].name.split(',')[0];
