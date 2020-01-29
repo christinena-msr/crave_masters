@@ -1,8 +1,11 @@
 
-/*-- Style for Find My Craving Web Application -- */
+body {
+    margin: 0px;
+}
 
 main {
     background-color: rgba(125, 130, 87, 0.75);
+    margin: 8px;
 }
 
 :root {
@@ -44,6 +47,10 @@ footer {
     width: 100%;
     text-align: center;
     padding: 5px;
+}
+
+.mdc-top-app-bar--fixed-adjust {
+    margin: 0 8px;
 }
 
 
