@@ -4,36 +4,105 @@ const ingredientsDivEl = document.querySelector('#ingredients-div');
 const instructionsDivEl = document.querySelector('#instructions-div');
 const videoEL = document.querySelector('#video-iframe');
 const savedButtonEl = document.querySelector('#save-recipe');
+const refreshButtonEl = document.querySelector('#refresh-btn');
+
+window.localStorage.removeItem('randoms');
 
 const redirectedCategory = JSON.parse(window.localStorage.getItem('category'));
-console.log(redirectedCategory);
+// console.log(redirectedCategory);
 const categoryUrl = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=';
 const idUrl = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i='
 
-fetch((categoryUrl + redirectedCategory))
-    .then(function(response){
-        return response.json();
-    })
-        .then(function(json){
+getRecipeData();
+
+
+refreshButtonEl.addEventListener('click', getRecipeData);
+
+function getRecipeData() {
+    fetch((categoryUrl + redirectedCategory))
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (json) {
             let id = generateRandomRecipe(json);
             fetch((idUrl + id))
-                .then(function(response){
+                .then(function (response) {
                     return response.json();
                 })
-                    .then(function(json){
-                        console.log(json);
-                        populatePage(json);
+                .then(function (json) {
+                    console.log(json);
+                    populatePage(json);
 
-                        savedButtonEl.addEventListener('click', saveRecipeData);
-                    })
-        });
-
+                    savedButtonEl.addEventListener('click', saveRecipeData);
+                })
+    })
+};
 
 function generateRandomRecipe(obj){
-    let randomMeal = Math.floor(Math.random() * obj.meals.length);
-    const mealsId = obj.meals[randomMeal].idMeal;
+    // let usedRandomsArr = JSON.parse(window.localStorage.getItem('randoms'));
+    // if (usedRandomsArr == null) {
+    //     usedRandomsArr = [];
+    // }
+    
+    let randomNum = Math.floor(Math.random() * obj.meals.length);
+    // checkIfRandomUsed(obj, usedRandomsArr, randomNum);
+    // console.log(usedRandomsArr);
+    
+    // if (usedRandomsArr.length > 1) {
+    //     let test = true;
+    //     while (test != false) {
+    //         let randomNumber = Math.floor(Math.random() * obj.meals.length);
+    //         let test = checkIfRandomUsed(usedRandomsArr, randomNumber);
+    //         console.log(test);
+    //         console.log(randomNumber);
+    //         if (test == false) {
+    //             window.localStorage.setItem('saved-random', JSON.stringify(randomNumber));
+    //         }
+    //     };
+    // } else if (usedRandomsArr.length <= 1) {
+    //     let randomNumber = Math.floor(Math.random() * obj.meals.length);
+    //         window.localStorage.setItem('saved-random', JSON.stringify(randomNumber));
+    // }
+    // console.log(random);
+    // if (random == 0 ) {
+        //     random = Math.floor(Math.random() * obj.meals.length);
+        // }
+
+    // let random = JSON.parse(window.localStorage.getItem('saved-random'));
+    // console.log(random);
+    // usedRandomsArr.push(random);
+    // window.localStorage.setItem('randoms', JSON.stringify(usedRandomsArr));
+    // window.localStorage.removeItem('saved-random');
+    let mealsId = obj.meals[randomNum].idMeal;
+    console.log(mealsId);
     return mealsId;
 };
+
+function checkIfRandomUsed(obj, arr, num) {
+    let numberUsed = false;
+    // let randomNum = Math.floor(Math.random() * obj.meals.length);
+    // console.log(randomNum);
+    for (let i = 0; i < arr.length; i++) {
+        let usedRandom = arr[i];
+        if (usedRandom === num) {
+            numberUsed = true;
+            // return numberUsed;
+        }
+    }
+    console.log(numberUsed);
+    // let finalNum = 0;
+    if (numberUsed == true) {
+        let randomNum = Math.floor(Math.random() * obj.meals.length);
+        checkIfRandomUsed(arr, randomNum);
+        console.log('other thing');
+    }
+    else {
+        console.log('this happened');
+        // console.log(randomNum);
+        let finalNum = num;
+        window.localStorage.setItem('saved-random', JSON.stringify(finalNum));
+    }
+}
 
 function populateYouTube(obj){
     let videoID = obj.meals[0].strYoutube.split("=")[1];
@@ -73,9 +142,10 @@ function createIngredientsArray(obj){
 }
 
 function generateListOfIngredients(arr) {
+    ingredientsDivEl.innerHTML = '';
     const newList = document.createElement('ul');
     newList.setAttribute('id', 'new-list');
-    console.log(arr);
+    // console.log(arr);
     for (let i = 0; i < arr.length; i++) {
         let newListItem = document.createElement('li');
         newListItem.setAttribute('id', `list-item-${i}`);
@@ -83,15 +153,24 @@ function generateListOfIngredients(arr) {
         newListItem.textContent = newIngredient;
         newList.append(newListItem);
     }
+    const ingredientsh3 = document.createElement('h3');
+    ingredientsh3.textContent = 'Ingredients: ';
+    ingredientsDivEl.append(ingredientsh3);
     ingredientsDivEl.append(newList);
 }
 
 function getInstructions(obj) {
+    instructionsDivEl.innerHTML = '';
     const newDiv = document.createElement('div');
     newDiv.setAttribute('class', 'instructions-text');
     const instructions = obj.meals[0].strInstructions;
     newDiv.textContent = `${instructions}`
     newDiv.setAttribute('id', 'new-instructions-div');
+    
+    const instructionsh3 = document.createElement('h3');
+    instructionsh3.textContent = 'Instructions: ';
+    instructionsDivEl.append(instructionsh3);
+    
     instructionsDivEl.append(newDiv);
 }
 
@@ -103,15 +182,12 @@ function saveRecipeData() {
     
     const savedMealName = recipeNameEl.textContent;
     const savedImgName = recipeImgEl.getAttribute('src');
-    // const ingredientsArr = createIngredientsArray(obj);
-    // let videoID = obj.meals[0].strYoutube.split("=")[1];
-    // let videoURL = `https://www.youtube.com/embed/${videoID}`;
     let listEl = document.querySelectorAll('li');
     let ingredientsArr = [];
-    console.log(listEl.length);
+    // console.log(listEl.length);
     for (let i = 0; i < listEl.length; i++) {
         let liEl = document.querySelector(`#list-item-${i}`).textContent;
-        console.log(liEl);
+        // console.log(liEl);
         ingredientsArr.push(liEl);
     }
     const savedInstructions = (document.querySelector('#new-instructions-div').textContent);
@@ -132,7 +208,7 @@ function saveRecipeData() {
     };
 
     window.localStorage.setItem('saved-recipes', JSON.stringify(savedRecipesArr));
-    console.log(savedRecipesArr);
+    // console.log(savedRecipesArr);
 }
 
 function checkIfRecipeSaved(arr, obj) {
