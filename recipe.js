@@ -128,16 +128,21 @@ function createIngredientsArray(obj){
         let measure = 'strMeasure'
         let nextMeasure = measure + counter;
         // console.log(nextIngredient);
-        let finalMeasure = obj.meals[0][nextMeasure];
-        let ingredientCheck = obj.meals[0][nextIngredient];
-        // console.log(ingredientCheck)
-        if (ingredientCheck === '' || ingredientCheck === null) {
+        if (!(`${nextIngredient}` in obj.meals[0])) {
             return ingredientsArr;
         }
-        else {
-            ingredientsArr.push(`${ingredientCheck}: ${finalMeasure}`);
-        }
+            let finalMeasure = obj.meals[0][nextMeasure];
+            let ingredientCheck = obj.meals[0][nextIngredient];
+        
+            // console.log(ingredientCheck)
+            if (ingredientCheck === '' || ingredientCheck === null) {
+                return ingredientsArr;
+            }
+            else {
+                ingredientsArr.push(`${ingredientCheck}: ${finalMeasure}`);
+            }
         counter++;
+        
     }
 }
 
