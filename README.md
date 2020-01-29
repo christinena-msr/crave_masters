@@ -11,10 +11,13 @@ From the list of restaurants, users can select to order online GrubHub if availa
 * Add a profile page that gathers the user's information to personalize the experience. The information collected would be the user's name to be used in greetings when the app is loaded. The user could also enter any allergies or dietary preferences/need they have which would be used to remove any recipes that contains those ingredients or doesn't meet their diet.  
 * Customize the greeting based on the time of day.  Based on time of day it could tailor the recipes for breakfast/lunch/dinner or restaurants that are open 
 * Give users a list of recipes to choose vs. presenting a random one to users 
-* Provide a map that shows the user's specific location and restuarants around them based on their cuisine type
-* Allow users to view both recipes and restarants side-by-side
+* Provide a map that shows the user's specific location and restaurants around them based on their cuisine type
+* Allow users to view both recipes and restaurants side-by-side
 * Allow users to search for a type of cuisine and not limited to the categories given
-* Allow users to expand/reduce their search area or enter a city to search for restuarants vs. using their current location
+* Allow users to expand/reduce their search area or enter a city to search for restaurants vs. using their current location
+
+# credits
+* Background Image credit to Heather Ford from Unsplash
 
 # contributors
 [Courtney Seto](https://github.com/setocourtney), [Christine Na](https://github.com/crispysodium), [Brigham Mueller](https://github.com/Brigmu) and [Michele Acheson](https://github.com/macheson)
