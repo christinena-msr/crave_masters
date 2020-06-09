@@ -1,6 +1,6 @@
 # crave it! :heart_eyes:
 
-Deployed: https://crispysodium.github.io/crave_masters/
+Deployed: [Crave-It!](https://crispysodium.github.io/crave_masters/)
 
 An application that allows hungry users to find what they are craving to eat.  It gives users the option to search for a recipe or find a restaurant.  After selecting to find a recipe or restaurant, the users will be presented with a list of cuisine types to select.  After selecting, the users will be presented with either a random recipe of that cuisine type or a list of restaurants within 25 miles of their current location.
 
